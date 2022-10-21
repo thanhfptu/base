@@ -1,0 +1,25 @@
+# App Info
+APP_SECRET=JustForDev
+
+# DB Info
+DB_HOST=35.220.139.241
+DB_PORT=6033
+DB_NAME=foms_staging
+DB_USERNAME=foms_staging
+DB_PASSWORD=b@s02t*3KVjW
+
+# Sentry Info
+SENTRY_ENVIRONMENT=development
+SENTRY_DSN=https://024e30458d384f80a02d0741eb37572a@o1268564.ingest.sentry.io/6456326
+
+# Firebase
+FIREBASE_GOOGLE_CREDENTIALS=fptu-ojt-careers-firebase-adminsdk-tf02n-4669fb986a.json
+
+# Kafka Info
+KAFKA_BROKERS=34.96.204.158:9093
+
+# Mail Server Info
+MAIL_SERVER=smtp.mailgun.org
+MAIL_PORT=587
+MAIL_USERNAME=admin@foms.me
+MAIL_PASSWORD=3589b2bec61f180c24104d003472f105-4dd50799-c74800cb

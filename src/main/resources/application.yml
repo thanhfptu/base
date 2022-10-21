@@ -1,0 +1,68 @@
+app:
+  secret: ${APP_SECRET}
+  readTimeout: 30
+  connectTimeout: 30
+db:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  name: ${DB_NAME}
+  username: ${DB_USERNAME}
+  password: ${DB_PASSWORD}
+firebase:
+  googleCredentials: ${FIREBASE_GOOGLE_CREDENTIALS}
+sentry:
+  dsn: ${SENTRY_DSN}
+  traces-sample-rate: 1.0
+  environment: ${SENTRY_ENVIRONMENT}
+  logging:
+    minimum-event-level: info
+    minimum-breadcrumb-level: debug
+#elasticsearch:
+#  hosts: ${ES_HOSTS}
+springdoc:
+  api-docs:
+    path: /v1/app/api-docs
+  swagger-ui:
+    path: /v1/app/docs
+kafka:
+  brokers: ${KAFKA_BROKERS}
+server:
+  port: 9090
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  main:
+    banner-mode: off
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+    mapper:
+      allow-coercion-of-scalars: false
+  datasource:
+    url: jdbc:mysql://${db.host}:${db.port}/${db.name}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: ${db.username}
+    password: ${db.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      jdbc-url: jdbc:mysql://${db.host}:${db.port}/${db.name}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true
+      username: ${db.username}
+      password: ${db.password}
+      minimum-idle: 5
+      maximum-pool-size: 500
+      idle-timeout: 30000
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      pool-name: HikariPool
+  mail:
+    host: ${MAIL_SERVER}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

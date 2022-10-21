@@ -1,0 +1,14 @@
+CREATE TABLE majors
+(
+    id          BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    code        VARCHAR(5),
+    `name`      VARCHAR(255) NOT NULL,
+    `level`     TINYINT UNSIGNED DEFAULT 0,
+    parent_id   BIGINT UNSIGNED  DEFAULT 0,
+    enabled     TINYINT NOT NULL DEFAULT 1,
+    created_by  BIGINT UNSIGNED  DEFAULT 0,
+    created_at  DATETIME         DEFAULT CURRENT_TIMESTAMP,
+    modified_by BIGINT UNSIGNED  DEFAULT NULL,
+    modified_at DATETIME         DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci AUTO_INCREMENT = 1;
+CREATE INDEX major_code ON majors(code)

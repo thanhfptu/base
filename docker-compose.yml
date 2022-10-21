@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  app:
+    image: foms-api
+    container_name: foms_api
+    build:
+      context: .
+    env_file:
+      - application.properties
+    ports:
+      - '9090:9090'
